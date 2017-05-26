@@ -79,7 +79,9 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
     console.log(moment().format("X"));
 
     // Append train info to table on page
-    $("#trainTable > tbody").append("<tr><td>" + firebaseName + "</td><td>" + firebaseLine + "</td><td>"+ firebaseDestination + "</td><td>" + firebaseFrequency + " mins" + "</td><td>" + nextTrainArrival + "</td><td>" + minutes + "</td></tr>");
+    var row = "<tr><td>" + firebaseName + "</td><td>" + firebaseLine + "</td><td>"+ firebaseDestination + "</td><td>" + firebaseFrequency + " mins" + "</td><td>" + nextTrainArrival + "</td><td>" + minutes + "</td></tr>"
+    console.log('row', row);
+    $("#train-table > tbody").append(row);
   });
 
 ;
